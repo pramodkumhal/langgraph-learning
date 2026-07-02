@@ -81,9 +81,3 @@ Repository notes
 - Keep `.env` local and out of version control.
 - Clear notebook outputs before committing to keep diffs small.
 - Keep `uv.lock` committed so installs stay reproducible.
-
-License
--------
-
-No license has been added yet. Add one before publishing publicly if you want to allow reuse.
-
