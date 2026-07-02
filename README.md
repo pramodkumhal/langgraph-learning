@@ -2,24 +2,20 @@
 LangGraph Learning Notebooks
 ============================
 
-This repository contains learning notebooks for LangGraph — a personal learning workspace where you explore LangGraph concepts, build small agent demos, and document experiments.
+This repository is a personal learning workspace for LangGraph. It collects small notebook-based experiments covering chatbot flows, human-in-the-loop review, conditional routing, parallel workflows, iteration, and persistence.
 
 Overview
 --------
 
-- This is a collection of notebooks and examples for learning LangGraph.
-- Examples include a basic chatbot demo and a human-in-the-loop assistance notebook to illustrate agent workflows.
+- Notebook-first examples for exploring LangGraph concepts.
+- Lightweight Python entry point in `main.py` for quick smoke tests.
+- Dependency lockfile included for reproducible installs with `uv`.
 
 Project structure
 -----------------
 
-Repository tree (top-level)
-
 ```text
 .
-├─ .git/
-├─ .venv/               # local virtual environment (ignored)
-├─ .env                 # local credentials (DO NOT commit)
 ├─ main.py
 ├─ pyproject.toml
 ├─ requirements.txt
@@ -28,61 +24,66 @@ Repository tree (top-level)
 │  └─ Chatbot.ipynb
 ├─ 2-HumanAssistance/
 │  └─ humanintheloop.ipynb
-└─ README.md
+├─ 3-Parallel_Workflow/
+│  ├─ batsman_workflow.ipynb
+│  └─ essay_workflow.ipynb
+├─ 4-Conditional_Workflow/
+│  ├─ quadratic_equation_workflow.ipynb
+│  └─ review_reply_workflow.ipynb
+├─ 5-Iterative_workflow/
+│  └─ post_generator.ipynb
+├─ 6-chatbot/
+│  └─ baisc_chatbot.ipynb
+└─ 7-Persistence/
+	└─ persistence.ipynb
 ```
 
-Notes:
-- `.env` should be kept local and listed in `.gitignore`.
-- Clear notebook outputs before committing to keep diffs small and avoid leaking data.
-- Keep `uv.lock` for reproducible installs when using `uv`.
+Setup
+-----
 
-Dependencies and tooling
-------------------------
+Prerequisites:
 
-- This workspace uses the `uv` package/tool for dependency management instead of relying solely on `pip`.
-- Use your local `uv` workflow to install dependencies (example shown below). If you prefer `pip`, the `requirements.txt` file is provided for reference.
+- Python 3.14 or newer
+- `uv` recommended for dependency management
 
-Getting started
----------------
-
-1. Create and activate a virtual environment (recommended):
+Create and activate a virtual environment:
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-2. Install dependencies with `uv` (if you use it):
+Install dependencies with `uv`:
 
 ```powershell
-uv install
+uv sync
 ```
 
-Or install using `pip` if you prefer:
+If you prefer `pip`, use the requirements file:
 
 ```powershell
 pip install -r requirements.txt
 ```
 
-3. Run quick examples or open the notebooks in Jupyter Lab / Notebook:
+Usage
+-----
+
+- Open the notebooks in VS Code or Jupyter and run them from top to bottom.
+- Run the Python entry point as a quick environment check:
 
 ```powershell
 python main.py
 ```
 
-Usage notes
------------
+Repository notes
+----------------
 
-- Open the notebooks to follow step-by-step experiments; run cells from top to bottom.
-- Adapt `main.py` to point to your preferred Langgraph runtime or LLM backend when needed.
-
-Contributing
-------------
-
-This is primarily a personal learning repository. Contributions or suggestions are welcome — open an issue or submit a pull request if you'd like to share improvements or additional notebooks.
+- Keep `.env` local and out of version control.
+- Clear notebook outputs before committing to keep diffs small.
+- Keep `uv.lock` committed so installs stay reproducible.
 
 License
 -------
 
-Add a `LICENSE` file if you wish to apply an open-source license (e.g., MIT).
+No license has been added yet. Add one before publishing publicly if you want to allow reuse.
 
